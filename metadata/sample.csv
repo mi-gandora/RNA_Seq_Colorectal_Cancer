@@ -1,0 +1,11 @@
+Sample_ID, Tissue_type, Run_accession
+S1_Normal, Normal, ERR14837534
+S2_Normal, Normal, ERR14837536
+S3_Normal, Normal, ERR14837537
+S4_Normal, Normal, ERR14837538
+S5_Normal, Normal, ERR14837539
+S1_Tumor, Tumor, ERR14837540
+S2_Tumor, Tumor, ERR14837541
+S3_Tumor, Tumor, ERR14837542
+S4_Tumor, Tumor, ERR14837543
+S5_Tumor, Tumor, ERR148375356

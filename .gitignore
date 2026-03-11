@@ -1,4 +1,25 @@
+# --- Data Directories ---
+# Ignore all raw data files (SRA, FastQ, etc.)
 data/raw/*
 !data/raw/.gitkeep
+
+# --- Reference Genome ---
+# Ignore all large genome and index files
+reference/*
+!reference/.gitkeep
+
+# --- Specific File Types ---
+# Catch-all for large bioinformatics files
 *.fastq
+*.fq
 *.sra
+*.gz
+*.fasta
+*.fa
+*.gtf
+*.gff
+*.bam
+*.sam
+
+# --- System Files ---
+.DS_Store

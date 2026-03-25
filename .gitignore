@@ -8,6 +8,11 @@ data/raw/*
 reference/*
 !reference/.gitkeep
 
+#--- Results ---
+# Ignore all fastqc files
+results/fastqc_reports/*
+!results/fastqc_reports/.gitkeep
+
 # --- Specific File Types ---
 # Catch-all for large bioinformatics files
 *.fastq

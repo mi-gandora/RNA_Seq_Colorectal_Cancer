@@ -13,6 +13,10 @@ reference/*
 results/fastqc_reports/*
 !results/fastqc_reports/.gitkeep
 
+# Ignore all fastp files
+results/fastp_reports/*
+!results/fastp_reports/.gitkeep
+
 # --- Specific File Types ---
 # Catch-all for large bioinformatics files
 *.fastq

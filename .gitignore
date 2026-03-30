@@ -29,6 +29,7 @@ results/fastp_reports/*
 *.gff
 *.bam
 *.sam
+*.html
 
 # --- System Files ---
 .DS_Store

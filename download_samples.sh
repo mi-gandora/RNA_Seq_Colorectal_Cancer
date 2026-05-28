@@ -52,10 +52,20 @@ samtools sort -@ 1 -m 500M -T /mnt/c/bio_tmp/${ACC}_sort -o "${ACC}_sorted.bam" 
 # Clean up host disk space immediately after sample success
 rm -f /mnt/c/bio_tmp/${ACC}_sort.*.bam
 
+# NEW: Index the sorted BAM file
+echo "Generating genomic index (.bai) for ${ACC}_sorted.bam..."
+samtools index "${ACC}_sorted.bam"
+
+# NEW: Alignment Quality Control (Flagstat)
+echo "Generating mapping statistics for ${ACC}_sorted.bam..."
+samtools flagstat "${ACC}_sorted.bam" > "${ACC}_alignment_stats.txt"
+
 echo "-------------------------------------------------------"
 echo "PROCESS COMPLETE"
 echo "Raw QC: ${ACC}_fastqc.html"
 echo "Trimmed QC: ${ACC}_fastp_report.html"
 echo "Clean Data: ${ACC}_trimmed.fastq.gz"
 echo "Aligned & Sorted Reads: ${ACC}_sorted.bam"
+echo "Genomic Index File: ${ACC}_sorted.bam.bai"
+echo "Alignment Quality Report: ${ACC}_alignment_stats.txt"
 echo "-------------------------------------------------------"

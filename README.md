@@ -39,8 +39,7 @@ To remove low-quality bases and technical artifacts, `fastp` was utilized with t
 * Generation of an interactive HTML quality snapshot (`_fastp_report.html`) for post-trimming validation.
 
 ### 4. Memory-Optimized Reference Alignment (BWA-MEM) & Sorting
-Cleaned reads were mapped against the human reference genome (**GRCh38/hg38**).
-
+Cleaned reads were mapped against the human reference genome (**GRCh38/hg38**), followed by coordinate sorting, indexing, and mapping quality assessment.
 
 ## Phase 1 Final Artifacts (Alignment & Preprocessing)
 

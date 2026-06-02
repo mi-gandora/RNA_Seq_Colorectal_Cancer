@@ -20,10 +20,11 @@ This project investigates the gene expression profiles of colorectal cancer pati
 * **R (DESeq2/edgeR)**: Downstream statistical analysis and visualization.
 
 ---
+# Phase 1: Upstream Processing (Linux / WSL)
 
 ## Pipeline & Step-by-Step Methodology
 
-The complete upstream workflow is automated and documented in the master shell script: `download_samples.sh`. The pipeline processes raw sequencing data sequentially through the following stages:
+The complete upstream workflow is automated and documented in the master shell script: `download_samples.sh`. The pipeline processes raw sequencing data sequentially through the following stages, concluding with optimized gene-level quantification:
 
 ### 1. Data Acquisition (NCBI SRA)
 Raw single-end sequencing data for the tumor and matched normal samples were fetched directly from the NCBI Sequence Read Archive (SRA) database using the SRA Toolkit. 
@@ -41,22 +42,17 @@ To remove low-quality bases and technical artifacts, `fastp` was utilized with t
 ### 4. Memory-Optimized Reference Alignment (BWA-MEM) & Sorting
 Cleaned reads were mapped against the human reference genome (**GRCh38/hg38**), followed by coordinate sorting, indexing, and mapping quality assessment.
 
-## Phase 1 Final Artifacts (Alignment & Preprocessing)
+### 5. Gene Quantification & Pipeline Optimization
+To transform the raw sequence alignments into a structured gene expression profile, all 10 coordinate-sorted BAM files (5 Tumor + 5 Normal pairs) were quantified simultaneously using `featureCounts`.
 
-The upstream preprocessing pipeline automated by `download_samples.sh` successfully concludes with fully optimized, coordinate-sorted, and indexed BAM files. These serve as the finalized inputs required for the next phase of the project (**Phase 2: Gene Quantification via `featureCounts` and Downstream DGEA**).
+### Phase 1 Directory Output
+
+The terminal pipeline successfully concludes here. While the large intermediate alignment files remain archived locally in Linux as raw biological evidence, the entire upstream workflow has been compressed into a single, production-ready spreadsheet for statistical analysis.
 
 ```text
-├── S1_Tumor_sorted.bam       # Coordinate-aligned BAM file (Input for featureCounts)
-├── S1_Tumor_sorted.bam.bai   # Index file for rapid coordinate lookup
+├── Intermediate Data (Archived locally in Linux)
+│   ├── *_sorted.bam          # 10 Coordinate-aligned sequence files (5 Tumor / 5 Normal)
+│   └── *_sorted.bam.bai      # 10 Genomic index maps for rapid coordinate lookup
 │
-├── S2_Tumor_sorted.bam       # Coordinate-aligned BAM file (Input for featureCounts)
-├── S2_Tumor_sorted.bam.bai   # Index file for rapid coordinate lookup
-│
-├── S3_Tumor_sorted.bam       # Coordinate-aligned BAM file (Input for featureCounts)
-├── S3_Tumor_sorted.bam.bai   # Index file for rapid coordinate lookup
-│
-├── S4_Tumor_sorted.bam       # Coordinate-aligned BAM file (Input for featureCounts)
-└── S4_Tumor_sorted.bam.bai   # Index file for rapid coordinate lookup
-│
-├── S5_Tumor_sorted.bam       # Coordinate-aligned BAM file (Input for featureCounts)
-└── S5_Tumor_sorted.bam.bai   # Index file for rapid coordinate lookup
+└── Final Production Output (The entry point for Phase 2)
+    └── counts.csv            # Consolidated Master Count Matrix (Sole input for R)

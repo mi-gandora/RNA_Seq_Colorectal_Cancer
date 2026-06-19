@@ -68,7 +68,7 @@ To effectively isolate cancer-driving signals from natural human genetic variati
 
 ### 2. Differential Gene Expression Analysis (DGEA)
 * Statistical Threshold: Adjusted p-value calculated using the Benjamini-Hochberg (BH) False Discovery Rate (FDR) multiple-testing correction.  
-* Biological Threshold: A minimum 2-fold expression difference (log2FC| > 1.0) to isolate high-confidence targets. 
+* Biological Threshold: A minimum 2-fold expression difference (log2FC > 1.0) to isolate high-confidence targets. 
 * Annotation & Verification: Ensembl IDs were mapped to official HGNC symbols using biomaRt. Missing gene symbols default to their stable Ensembl IDs, and biological duplicates are safely resolved using `make.unique()` to preserve downstream matrix structure.
 
 ### 3. Transcriptional Profile Visualization
@@ -78,10 +78,10 @@ A global Volcano Plot was generated to map the biological effect size against st
 * Insignificant: Transcripts failing to clear the combined biological or statistical checkpoints
 
 ### 4. Over-Representation Analysis (ORA) via Gene Ontology
-Significant DEGs were mapped to their functional coordinates across Biological Process (BP), Cellular Component (CC), and Molecular Function (MF) domains using enrichGO(). Enriched terms were programmatically streamlined using `clusterProfiler::simplify()` to eliminate redundant parental vocabulary and isolate the core active biological themes.
+Significant DEGs were mapped to their functional coordinates across Biological Process (BP), Cellular Component (CC), and Molecular Function (MF) domains using `enrichGO()`. Enriched terms were programmatically streamlined using `clusterProfiler::simplify()` to eliminate redundant parental vocabulary and isolate the core active biological themes.
 
 ### 5. Gene Set Enrichment Analysis (GSEA)
-o capture coordinated, system-wide pathway shifts that standard strict cutoff methods might obscure, a threshold-free GSEA model was executed via `gseGO()`. Every single quantified gene was retained and continuously ranked based on its log-fold change expression gradient (|log2FC|).
+o capture coordinated, system-wide pathway shifts that standard strict cutoff methods might obscure, a threshold-free GSEA model was executed via `gseGO()`. Every single quantified gene was retained and continuously ranked based on its log-fold change expression gradient (log2FC).
 
 ### Phase 2 Directory Output
 The complete downstream analysis scripts, curated spreadsheets, and visual plots generated in Phase 2 are structured within the repository as follows:
@@ -106,4 +106,3 @@ The complete downstream analysis scripts, curated spreadsheets, and visual plots
 
 
 
->>>>>>> 9e4accb1304cdbcb3da17311a79aebea1287905e

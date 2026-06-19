@@ -58,9 +58,4 @@ The terminal pipeline successfully concludes here. While the large intermediate 
     └── counts.csv            # Consolidated Master Count Matrix (Sole input for R)
 
 
----
-**# Phase 2: Downstream Statistical Analysis & Functional Interpretation (R)**
 
-**## Pipeline & Step-by-Step Methodology
-**
-The downstream analysis is executed using specialized R scripts designed to parse the quantified master count matrix (counts.csv), isolate confident statistical variations, and map them to known physiological pathways.

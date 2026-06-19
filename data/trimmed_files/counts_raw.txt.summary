@@ -1,0 +1,15 @@
+Status	S1_Normal_sorted.bam	S1_Tumor_sorted.bam	S2_Normal_sorted.bam	S2_Tumor_sorted.bam	S3_Normal_sorted.bam	S3_Tumor_sorted.bam	S4_Normal_sorted.bam	S4_Tumor_sorted.bam	S5_Normal_sorted.bam	S5_Tumor_sorted.bam
+Assigned	57232577	39780203	41011855	51900255	57226001	52051367	40750061	52380082	39266296	52649367
+Unassigned_Unmapped	37529	25968	12140	12526	36766	10951	11770	21500	72793	22069
+Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	1783767	1231961	755930	1376980	1812038	1418849	775798	1749940	1191790	1783439
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	18292737	16498693	17687123	20531556	18137915	20367085	17272150	16509238	16942693	16244854

@@ -17,7 +17,7 @@ This project investigates the gene expression profiles of colorectal cancer pati
 * **BWA (v0.7.17)**: Burrows-Wheeler Aligner for short-read reference mapping.
 * **Samtools (v1.x)**: Genomic alignment manipulation, streaming, and coordinate sorting.
 * **FeatureCounts**: Post-alignment gene-level quantification.
-* **R (DESeq2/edgeR)**: Downstream statistical analysis and visualization.
+* **R (edgeR)**: Downstream statistical analysis and visualization.
 
 ---
 # Phase 1: Upstream Processing (Linux / WSL)

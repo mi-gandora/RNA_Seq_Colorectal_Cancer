@@ -81,7 +81,7 @@ A global Volcano Plot was generated to map the biological effect size against st
 Significant DEGs were mapped to their functional coordinates across Biological Process (BP), Cellular Component (CC), and Molecular Function (MF) domains using `enrichGO()`. Enriched terms were programmatically streamlined using `clusterProfiler::simplify()` to eliminate redundant parental vocabulary and isolate the core active biological themes.
 
 ### 5. Gene Set Enrichment Analysis (GSEA)
-o capture coordinated, system-wide pathway shifts that standard strict cutoff methods might obscure, a threshold-free GSEA model was executed via `gseGO()`. Every single quantified gene was retained and continuously ranked based on its log-fold change expression gradient (log2FC).
+To capture coordinated, system-wide pathway shifts that standard strict cutoff methods might obscure, a threshold-free GSEA model was executed via `gseGO()`. Every single quantified gene was retained and continuously ranked based on its log-fold change expression gradient (log2FC).
 
 ### Phase 2 Directory Output
 The complete downstream analysis scripts, curated spreadsheets, and visual plots generated in Phase 2 are structured within the repository as follows:
